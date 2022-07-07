@@ -10,7 +10,9 @@ const {
   deleteAReaction,
 } = require("../../controllers/thought-controller");
 
-router.route("/").get(findAllThoughts);
+router
+  .route("/")
+  .get(findAllThoughts);
 
 router
   .route("/:id")
@@ -18,10 +20,16 @@ router
   .put(updateAThought)
   .delete(deleteAThought);
 
-router.route("/:userId").post(createAThought);
+router
+  .route("/:userId")
+  .post(createAThought);
 
-router.route("/:thoughtId/reactions").post(addAReaction);
+router
+  .route("/:thoughtId/reactions")
+  .post(addAReaction);
 
-router.route("/:thoughtId/reactions/:reactionId").delete(deleteAReaction);
+router
+  .route("/:thoughtId/reactions/:reactionId")
+  .delete(deleteAReaction);
 
 module.exports = router;
