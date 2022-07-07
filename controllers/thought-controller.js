@@ -117,7 +117,7 @@ const thoughtController = {
         res.json(dbThoughtData);
       })
       .catch((err) => res.status(400).json(err));
-  },
+  }
 };
 
 module.exports = thoughtController;
